@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data de Aniversário</title>
+    <style>
+        /* CORPO DA PÁGINA COM FONTE FEIA E FUNDO BARRADO */
+        body {
+            background-color: #ff00ff; /* Magenta chocante */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            color: #ffff00; /* Amarelo neon */
+        }
+
+        /* CABEÇALHO GRANDE E CONFUSO */
+        h1 {
+            font-size: 48px;
+            color: #00ff00; /* Verde neon */
+            text-shadow: 3px 3px 5px #ff0000; /* Sombra desconfortável */
+            margin-top: 50px;
+            text-decoration: underline wavy #ff6347;
+        }
+
+        /* CAIXA DE TEXTO (Input feio e bugado) */
+        input {
+            background-color: #ffff00;
+            color: #ff0000;
+            font-size: 20px;
+            border: 3px dashed #ff6347; /* Laranja */
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* BOTÃO (com efeito que bagunça a tela) */
+        button {
+            background-color: #ff6347;
+            color: white;
+            font-size: 20px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4500; /* Laranja mais forte */
+            box-shadow: 0 0 20px 5px #ff0000;
+        }
+
+        /* RESULTADO (pegadinha nas mensagens) */
+        .resultado {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            text-shadow: 1px 1px 10px #00ff00;
+        }
+
+        .erro {
+            color: #ff0000;
+        }
+
+        .sucesso {
+            color: #00ff00;
+        }
+
+        /* MENSAGEM DE PEGADINHA (errada ou confusa) */
+        .pegadinha {
+            font-size: 12px;
+            color: #ff6347;
+            background-color: #000000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        /* Rótulo e mensagens feias */
+        .rótulo {
+            font-size: 18px;
+            color: #ffff00;
+            background-color: #0000ff;
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Digite Sua Data de Aniversário</h1>
+
+    <input type="text" id="data" placeholder="Use o formato dd-mm-yyyy ou nao">
+    <button onclick="verificarData()">Verificar</button>
+
+    <div id="resultado" class="resultado"></div>
+
+    <p class="name"> digite com espaços e sem hifen</p>
+
+    <script>
+        function verificarData() {
+            const data = document.getElementById('data').value;
+            const resultado = document.getElementById('resultado');
+
+            // Pegadinha 1: Não aceita espaços, mas se o usuário colocar espaços, ele verá uma mensagem confusa
+            if (data.includes(" ")) {
+                resultado.innerHTML = '<span class="erro">Erro: Espaços não são permitidos, mas talvez você tente novamente com hífens!</span>';
+                return;
+            }
+
+            // Pegadinha 2: O formato que o usuário provavelmente usará (dd-mm-yyyy) está errado, mas o código não avisa diretamente
+            const regex = /\d{2}-\d{2}-\d{4}/;
+            if (!regex.test(data)) {
+                resultado.innerHTML = '<span class="erro">Erro: Formato errado! Use dd-mm-aaaa. Ou não...</span>';
+                return;
+            }
+
+            // Pegadinha 3: Aqui a data é convertida, mas ela não faz muito sentido
+            const [dia, mes, ano] = data.split('-');
+            const dataFormatada = new Date(ano, mes - 1, dia);
+            const dataHoje = new Date();
+
+            // Pegadinha 4: Se a data for futura, o código vai dar erro. Mas com uma mensagem estranha
+            if (dataFormatada > dataHoje) {
+                resultado.innerHTML = '<span class="erro">Erro: Você não pode inventar uma data futura, a não ser que seja de um outro universo!</span>';
+                return;
+            }
+
+            // Se tudo der certo (mas com uma mensagem feia)
+            resultado.innerHTML = `<span class="sucesso">Data aceita: ${data}. Mas... é isso mesmo?</span>`;
+        }
+    </script>
+
+</body>
+</html>
