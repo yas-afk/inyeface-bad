@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Definindo a imagem de fundo para o corpo */
+body {
+    background-image: url('imgs/campoflo.jpeg');  /* Caminho para sua imagem */
+    background-size: cover;  /* Garante que a imagem cubra todo o fundo */
+    background-position: center;  /* Centraliza a imagem */
+    background-attachment: fixed;  /* Mantém a imagem fixa ao rolar a página */
+    color: #ffffffb9;  /* Cor do texto para melhor visibilidade */
+}
+
+/* Opcional: Adicionando uma sobrecapa transparente sobre o fundo */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);  /* Sobreposição preta com transparência */
+    z-index: -1;  /* Garante que a sobrecapa fique atrás do conteúdo */
+}
+
+/* Estilo para o cabeçalho e rodapé, garantindo que o texto fique visível */
+header, footer {
+    color: rgb(179, 114, 150);  /* Garante que o texto no cabeçalho e rodapé seja visível */
+}
+
+/* Estilo para outras seções */
+.section {
+    padding: 50px;
+    background-color: rgba(255, 254, 251, 0.596);  /* Fundo claro para deixar o texto legível */
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f76f84;
+  color: #333;
+}
+
+header {
+  background-color: #fd798dd8;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f76f84;
+}
+
+header .logo h1 {
+  font-size: 2rem;
+  color: #e4adbf;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #cc4f64;
+  font-size: 1.2rem;
+}
+
+section {
+  padding: 40px;
+  background-color: #ffebb8;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #b3394b;
+  margin-bottom: 20px;
+}
+
+.product-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product {
+  background-color: #e65a71;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  width: 250px;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product h3 {
+  font-size: 1.5rem;
+  color: #b12f43;
+  margin-top: 15px;
+}
+
+.product p {
+  font-size: 1rem;
+  color: #ffbbbb;
+  margin: 10px 0;
+}
+
+.product button {
+  background-color: #b12f43;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product button:hover {
+  background-color: #9b2432;
+}
+
+footer {
+  background-color: #f0e1e6;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+form button {
+  background-color: #b12f43;
+  color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #9b2432;
+}
+/* Estilo geral para o corpo */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe9ae;
+  color: #a02539;
+}
+
+/* Estilos para os botões de finalizar e cancelar */
+button {
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 150px;
+  border: none;
+  margin-top: 20px;
+}
+
+/* Botão de Finalizar Compra (Vermelho) */
+button.finalizar {
+  background-color: #e74c3c; /* Vermelho */
+  color: #fff;
+}
+
+button.finalizar:hover {
+  background-color: #c0392b; /* Vermelho mais escuro */
+}
+
+/* Botão de Cancelar Compra (Verde) */
+button.cancelar {
+  background-color: #2ecc71; /* Verde */
+  color: #fff;
+}
+
+button.cancelar:hover {
+  background-color: #27ae60; /* Verde mais escuro */
+}
+/* Estilos para o pop-up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  display: none; /* Inicialmente escondido */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Coloca o pop-up acima de outros elementos */
+}
+
+/* Estilos para o conteúdo do pop-up */
+.popup-conteudo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o botão X */
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Estilo para o contador de tempo */
+#contador-tempo {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+

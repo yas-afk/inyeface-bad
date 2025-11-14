@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras - Jardim de Palavras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Jardim de Palavras</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Voltar para a Loja</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="carrinho" class="section">
+    <!-- Pop-up de Tempo -->
+<div id="popup-tempo" class="popup">
+  <div class="popup-conteudo">
+    <span id="fechar-popup" class="fechar">&times;</span>
+    <p id="contador-tempo">Tempo restante: 1:00</p>
+  </div>
+</div>
+    <h2>Seu Carrinho</h2>
+    <div id="carrinho-container">
+      <!-- Itens do carrinho serão exibidos aqui -->
+    </div>
+    <div id="total-container">
+      <p>Total: R$ <span id="total">0.00</span></p>
+    </div>
+    <div id="botao-finalizar">
+      <button class="finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+      <button class="cancelar" onclick="cancelarCompra()">Cancelar Compra</button>
+    </div>
+  </section>
+
+
+  <script src="script/script.js"></script>
+</body>
+</html>
